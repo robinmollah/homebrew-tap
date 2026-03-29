@@ -10,7 +10,8 @@ class Chatgpt < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.12")
-    # Install from project metadata so dependencies from pyproject.toml are pulled in.
+    # Ensure runtime deps are present even if pip resolves local build metadata without deps.
+    venv.pip_install %w[httpx pydantic]
     venv.pip_install_and_link buildpath
   end
 
