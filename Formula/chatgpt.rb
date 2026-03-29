@@ -12,6 +12,16 @@ class Chatgpt < Formula
     virtualenv_install_with_resources
   end
 
+  def caveats
+    <<~EOS
+      Uninstall:
+        brew uninstall chatgpt
+
+      Remove tap (optional):
+        brew untap robinmollah/tap
+    EOS
+  end
+
   test do
     assert_match "chatgpt_agent CLI", shell_output("#{bin}/chatgpt --help")
   end
