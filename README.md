@@ -6,5 +6,5 @@ Homebrew tap for Robin Mollah tools.
 
 ```bash
 brew tap robinmollah/tap
-brew install chatgpt
+brew install --HEAD chatgpt
 ```
