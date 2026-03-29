@@ -20,8 +20,8 @@ class Chatgpt < Formula
       httpcore
       httpx
       idna
-      pydantic
-      pydantic-core
+      pydantic==2.12.5
+      pydantic-core==2.41.5
       sniffio
       typing-extensions
       typing-inspection
