@@ -10,8 +10,21 @@ class Chatgpt < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.12")
-    # Ensure runtime deps are present even if pip resolves local build metadata without deps.
-    venv.pip_install %w[httpx pydantic]
+    # Ensure runtime deps are present in the venv, including transitive dependencies.
+    venv.pip_install %w[
+      annotated-types
+      anyio
+      certifi
+      h11
+      httpcore
+      httpx
+      idna
+      pydantic
+      pydantic-core
+      sniffio
+      typing-extensions
+      typing-inspection
+    ]
     venv.pip_install_and_link buildpath
   end
 
