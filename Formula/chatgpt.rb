@@ -6,6 +6,7 @@ class Chatgpt < Formula
   head "https://github.com/robinmollah/chatgpt.git", branch: "main"
   license "MIT"
 
+  depends_on "rust" => :build
   depends_on "python@3.12"
 
   def install
