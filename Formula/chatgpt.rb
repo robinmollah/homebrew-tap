@@ -9,7 +9,9 @@ class Chatgpt < Formula
   depends_on "python@3.12"
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.12")
+    # Install from project metadata so dependencies from pyproject.toml are pulled in.
+    venv.pip_install_and_link buildpath
   end
 
   def caveats
